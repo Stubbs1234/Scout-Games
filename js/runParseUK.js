@@ -1,0 +1,3 @@
+$(function () {
+     $('#blah').removeClass('hidden');
+ });

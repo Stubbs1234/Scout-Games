@@ -1,0 +1,24 @@
+#example-print {
+       display: none;
+    }
+@media print {
+    #main {
+       display: none;
+    }
+    #example-print {
+       display: block;
+    }
+    
+    .name {
+    display: block;
+    }
+    .des {
+    display: block;
+    }
+    .web {
+    display: block;
+    }
+    .item {
+    display: block;
+    }
+}

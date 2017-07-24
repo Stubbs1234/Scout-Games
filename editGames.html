@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>Edit Game</title>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+<meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+    <!--<script type="text/javascript" src="js/tablet.js"></script>-->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+   <script src="//www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+</head>
+<body>
+<div id="main">
+<div id="nav">
+<div id="nav_wrapper">
+<ul>
+<li><a href="myGames.html">Back</a></li>
+</ul>
+</div>
+</div>
+<br>
+<script type="text/javascript">
+//xbyDEH1EvA
+Parse.initialize("oTP5FJ4M9ESGzja1SrNcgDn7N07xtUmXqjyL4Da9", "8x1n5FZy4tEcXToWhjZYRkGukF1T28Lv0rL7BZKe", "JD1RtWwNcyc5q312ABc9saQ1ofvJNtxMycUlrOcA");
+Parse.serverURL = 'https://parseapi.back4app.com'
+var des = ""
+var name = ""
+var equipment = ""
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+var idob = $.urlParam('id');
+console.log($.urlParam('id'));
+var GameScore = Parse.Object.extend("ukgames");
+var query = new Parse.Query(GameScore);
+query.get(idob, {
+  success: function(gameScore) {
+name = gameScore.get("NameGame");
+des = gameScore.get("des");
+equipment = gameScore.get("item"); 
+display();
+  },
+  error: function(object, error) {
+    // The object was not retrieved successfully.
+    // error is a Parse.Error with an error code and message.
+  }
+});
+function display() {
+document.getElementById("load1").innerHTML = name;
+document.getElementById("load2").innerHTML = des;
+document.getElementById("load3").innerHTML = equipment;
+}
+
+</script>
+<div style="text-align:center;">
+<form name=updateForm role="form">
+<h1 align="center">Scout Games</h1>
+<h2 align="center">Name Of The Game:</h2>
+<textarea id="load1" name="load1" style="width: 300px; height: 150px;"></textarea>
+<h2 align="center">Equipment Needed:</h2>
+<textarea id="load3" name="load3" style="width: 300px; height: 150px;"></textarea>
+<h2 align="center">Description:</h2>
+<textarea id="load2" name="load2" style="width: 300px; height: 150px;"></textarea><br>
+</form>
+</div>
+<div style="text-align:center;">
+<button id="up">Update</button>
+<button id="can">Cancel</button>
+
+<script type="text/javascript">
+var idob =""
+var url = "http://scoutgames.co.uk/myGames.html"
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+idob = $.urlParam('id');
+console.log($.urlParam('id'));
+Parse.initialize("oTP5FJ4M9ESGzja1SrNcgDn7N07xtUmXqjyL4Da9", "8x1n5FZy4tEcXToWhjZYRkGukF1T28Lv0rL7BZKe", "JD1RtWwNcyc5q312ABc9saQ1ofvJNtxMycUlrOcA");
+Parse.serverURL = 'https://parseapi.back4app.com'
+$('#up').click(function () {
+var con = ""
+var user = Parse.User.current().get("country");
+	if (user == "United Kingdom") {
+	con = "ukgames";
+	} else if (user == "United States") {
+	con = "usgames";
+	} else if (user == "Canada") {
+	con = "cangames";
+	} else if (user == "Australia") {
+	con ="ausgames";
+	}
+var load1 = updateForm.load1.value;
+var load2 = updateForm.load2.value;
+var load3 = updateForm.load3.value;
+
+var GameScore = Parse.Object.extend(con);
+var query = new Parse.Query(GameScore);
+query.equalTo("objectId", idob);
+query.first({
+  success: function(object) {
+object.set("NameGame", load1);
+object.set("des", load2);
+object.set("item", load3);
+object.save();
+alert("Done!");
+window.open(url, '_top');
+  },
+  error: function(error) {
+    alert("Error: " + error.code + " " + error.message);
+  }
+});
+
+});
+$('#can').click(function () {
+window.open(url, '_top');
+});
+</script>
+</div>
+</div>
+</div>
+<div class="footer">
+<small><p>Copyright &copy; Scout Games <span id="year"></span>, All rights reserved</p></small>
+<small<p><a href="index.html">Login</a> | <a href="start/learn.html">Learn More</a> | <a href="store.html">Subscription</a></p></small>
+<small><p>Powered By <a href="https://parse.com">Parse.com</a></p></small>
+<script type="text/javascript">
+var d = new Date();
+var n = d.getFullYear();
+document.getElementById("year").innerText = n;
+</script>
+</div>
+</body>
+</html>

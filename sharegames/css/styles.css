@@ -1,0 +1,282 @@
+body {
+    background: #eee;
+    text-align: center;
+    padding: 0 25px;
+}
+form {
+    display: inline-block;
+    text-align: center;
+    }
+#contactDiv {
+    width: 30%;
+    margin: 0 auto;
+}
+#search {
+	width: 80%;
+    margin: 0 auto;
+
+}
+#main {
+    width: 1050px;
+    margin: auto;
+    text-align: left;
+    background: white;
+    padding: 40px 50px;
+    border: solid #000;
+    border-width: 5px 5px 5px 5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#main1 {
+    width: 1050px;
+    margin: auto;
+    text-align: left;
+    background: white;
+    padding: 40px 50px;
+    border: solid #000;
+    border-width: 5px 5px 5px 5px;
+    margin-top: 40px;
+}
+.textFields {
+ text-align:center;
+	display: inline-block;
+	width: 800px;
+	height: 30px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.buttons{ 
+text-align:center;
+ display: in-line;
+	height: 30px;
+    margin-top: 30px;
+   margin-left: 140px;
+}
+#login {
+    width: 40%;
+    margin: 0 auto;
+}
+#uploadForm {
+ margin-top:30px;
+}
+#news {
+border-width: 0px;
+border: solid black;
+padding: 10px;c
+}
+#main h1 {
+    margin-top: 0;
+    font-size: 35px;
+}
+#main p {
+color: black;
+}
+#main ul {
+    padding-left: 20px;
+}
+
+#picker{
+margin-bottom: 40px;
+}
+#table1{
+
+margin-top: 30px;
+margin-bottom: 20px;
+
+}
+
+#loginBox {
+margin-top: 30px;
+
+}
+
+.myButton {
+	
+-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	
+-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	
+box-shadow:inset 0px 1px 0px 0px #ffffff;
+	
+background-color:#ffffff;
+	
+-moz-border-radius:6px;
+	
+-webkit-border-radius:6px;
+	
+border-radius:6px;
+	
+border:1px solid #dcdcdc;
+	
+display:inline-block;
+	
+cursor:pointer;
+	
+color:#666666;
+	
+font-family:arial;
+	
+font-size:12px;
+	
+font-weight:bold;
+	
+padding:6px 24px;
+	
+text-decoration:none;
+	
+text-shadow:0px 1px 0px #ffffff;
+
+}
+
+
+.myButton:hover {
+	
+background-color:#f6f6f6;
+
+}
+
+.myButton:active {
+	
+position:relative;
+	
+top:1px;
+
+}
+
+#nav {
+    background-color: #000000;
+    background-size:807px 800px;
+	font-family: Arial;
+	width: 100%;
+	
+}
+#nav_wrapper {
+    width: 1007px;
+    margin: 0;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 5px;
+
+}
+#nav ul li a 
+{
+color: #FFFFFF;
+}
+#nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 240px;
+    color: #FFF;
+}
+#nav ul li {
+    display: inline-block;
+    
+}
+
+#nav ul li a, visited {
+    /*color: #CCC;*/
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+#nav ul li:hover ul {
+    display: block;
+	color: #C4C4C;
+}
+#nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    /*border: 5px solid #4E52D0;
+    border-top: 0;*/
+    margin-left: -5px;
+}
+#nav ul ul li {
+    display: block;
+}
+
+#nav ul ul li a:hover {
+    color: #FFF;
+}
+#nav ul li a:hover {
+	background-color: #C4C4C;
+	display: block;
+}
+
+#nav1 {
+    background-color: #000000;
+    background-size: 807px 800px;
+	font-family: Arial;
+	width: 100%;
+}
+#nav_wrapper1 {
+    width: 1007px;
+    margin: 0;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 5px;
+}
+#nav1 ul li a 
+{
+color: #FFFFFF;
+}
+#nav1 ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    min-width: 200px;
+    color: #FFF;
+}
+#nav1 ul li {
+    display: inline-block;
+    
+}
+
+#nav1 ul li a, visited {
+    /*color: #CCC;*/
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+#nav1 ul li:hover ul {
+    display: block;
+	color: #C4C4C;
+}
+#nav1 ul ul {
+    display: none;
+    position: absolute;
+    background-color: #C4C4C4;
+    border: 5px solid #4E52D0;
+    border-top: 0;
+    margin-left: -5px;
+}
+#nav1 ul ul li {
+    display: block;
+}
+
+#nav1 ul ul li a:hover {
+    color: #FFF;
+}
+#nav1 ul li a:hover {
+	background-color: #C4C4C;
+	display: block;
+}
+
+.ui-helper-center {
+    text-align: center;
+}
+
+.mainButton {
+    background: white;
+    padding: 2em 0;
+}
+
+.button {
+    display: table;
+    margin: 0 auto;
+}
